@@ -1,5 +1,3 @@
-// Seleziona lo span e imposta il suo contenuto al corrente anno
-document.getElementById("current-year").textContent = new Date().getFullYear();
 
 const canvas = document.getElementById('snow');
 const ctx = canvas.getContext('2d');
