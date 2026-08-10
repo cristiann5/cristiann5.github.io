@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lo tiene dietro a tutto il resto */
+    pointer-events: none; /* Evita che blocchi i click sui pulsanti */
+}
+
+
+body {
+
+    background-color: #0b0c10;
+    background-image: 
+        radial-gradient(at 15% 15%, rgba(138, 43, 226, 0.18) 0px, transparent 45%),
+        radial-gradient(at 85% 85%, rgba(255, 20, 147, 0.15) 0px, transparent 45%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Contenitore principale che affianca le due card */
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    max-width: 900px;
+    width: 100%;
+    align-items: stretch; /* Mantiene la stessa altezza se lo desideri */
+}
+
+/* Stile base comune per entrambe le card */
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Card Profilo (Destra) */
+.profile-card {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Card Progetti (Sinistra) */
+.projects-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.projects-card h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    color: #808090;
+    margin-bottom: 25px;
+}
+
+/* Lista Link per i Progetti */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links-list a {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.links-list a span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.links-list a small {
+    color: #808090;
+    font-size: 0.78rem;
+    margin-top: 3px;
+}
+
+.links-list a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Elementi dell'avatar e social */
+.avatar-container {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+p.bio {
+    font-size: 0.88rem;
+    color: #a0a0b0;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.profile-card h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #707080;
+    margin-bottom: 12px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.social-links a {
+    display: block;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 0.75rem;
+    color: #505060;
+}
+
+/* Responsive: su schermi piccoli si sovrappongono */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
